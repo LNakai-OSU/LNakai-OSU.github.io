@@ -43,6 +43,15 @@ export const PROJECTS = [
     tech: ["PostgreSQL", "FastAPI", "React", "Python", "Claude API", "Data Pipelines"],
     githubUrl: "https://github.com/LNakai-OSU/ufc-data-insights-web-app",
   },
+  {
+    name: "Leafcutter Ant Colony Simulation",
+    tagline: "An agent-based colony + foraging simulation, rendered as a live 3D colored graph.",
+    description:
+      "A Mesa agent-based model of an Atta-style leafcutter colony - caste division of labor, fungus-garden agriculture, and ant-colony-optimization-style pheromone trail recruitment - revisiting the ant foraging behavior research I did in undergrad, now as a full simulation. Ships with twelve biologically-grounded variants (garden disease, phorid fly parasitism, seasonal drought, a rival colony contesting shared trees, and more), an A/B comparison mode to test whether a variant actually helps or hurts, and a parameter-sweep tool that heatmaps outcomes across a grid - a small experiment platform, not just a visualization.",
+    image: "/screenshots/antcolony-preview.png",
+    tech: ["Python", "Mesa", "FastAPI", "React", "react-three-fiber", "Agent-Based Modeling"],
+    githubUrl: "https://github.com/LNakai-OSU/leafcutter-ant-colony-sim",
+  },
 ];
 
 export const EXPERIENCE = [
