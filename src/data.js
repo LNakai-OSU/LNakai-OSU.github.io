@@ -52,6 +52,15 @@ export const PROJECTS = [
     tech: ["Python", "Mesa", "FastAPI", "React", "react-three-fiber", "Agent-Based Modeling"],
     githubUrl: "https://github.com/LNakai-OSU/leafcutter-ant-colony-sim",
   },
+  {
+    name: "Shelf Match",
+    tagline: "A book recommender constrained to what a small store actually has in stock.",
+    description:
+      "Trained on real Goodreads data (goodbooks-10k: 10,000 books, ~6M ratings) but ranked only against a simulated indie bookstore's curated ~1,900-title inventory - the real problem is best available, not best hypothetical. Compares a content-based model (TF-IDF over genre tags), a from-scratch collaborative-filtering model (latent-factor matrix factorization trained with vectorized gradient descent, users folded in via ridge regression against trained item factors), and a tunable hybrid, side by side. Accepts a real Goodreads library export or a quick search-and-rate profile. Two real bugs found via targeted sanity checks - a count-independent bias-shrinkage flaw and a 15x gradient-accumulation slowdown from np.add.at - are documented in the README.",
+    image: "/screenshots/shelfmatch-preview.png",
+    tech: ["Python", "scikit-learn", "NumPy/SciPy", "FastAPI", "React", "Recommender Systems"],
+    githubUrl: "https://github.com/LNakai-OSU/shelf-match",
+  },
 ];
 
 export const EXPERIENCE = [
