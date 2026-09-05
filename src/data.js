@@ -61,6 +61,15 @@ export const PROJECTS = [
     tech: ["Python", "PyTorch", "sentence-transformers", "NumPy/SciPy", "FastAPI", "React"],
     githubUrl: "https://github.com/LNakai-OSU/shelf-match",
   },
+  {
+    name: "Limber",
+    tagline: "Find a stretch for what hurts - describe it, click a real muscle chart, or screen it from your webcam.",
+    description:
+      "A wellness app that takes three different kinds of input for the same question - what should I do about this pain or stiffness - and answers from a single hand-curated library of 111 stretches and mobility exercises. A free-text description gets matched by real sentence-embedding similarity, not keywords; a click on the anatomy diagram works because the major muscle groups are actual anatomical illustrations from the open wger.de exercise database layered onto a custom outline, not shapes I drew (wger's own exercise content is gym/strength-training focused, so I kept its art but wrote my own pain-relief-oriented content); and a few seconds of guided movement gets screened for range of motion by MediaPipe pose estimation running entirely in the browser - the video never leaves your device, only a single joint angle does. Every exercise also opens into a real three.js scene: a jointed capsule rig with true forward-kinematics (rotating a shoulder actually carries its elbow and wrist) that you can drag to rotate, not a canned animation.",
+    image: "/screenshots/limber-preview.png",
+    tech: ["FastAPI", "sentence-transformers", "React", "MediaPipe", "three.js"],
+    githubUrl: "https://github.com/LNakai-OSU/limber",
+  },
 ];
 
 export const EXPERIENCE = [
