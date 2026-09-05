@@ -38,9 +38,9 @@ export const PROJECTS = [
     name: "UFC Fighter Stats",
     tagline: "A full-stack fighter & fight-statistics dashboard, from schema to chat assistant.",
     description:
-      "Built on real UFC fight data: a normalized Postgres schema, a FastAPI backend serving read-only stats endpoints, and a React dashboard with 20+ interactive charts and widgets - a choropleth of fighter birthplaces, division leaderboards, live UFC.com rankings, and more. The centerpiece is a natural-language-to-SQL chat assistant backed by Claude, where a dedicated read-only Postgres role is the real enforcement layer, not just a prompt. The color system is real Material 3 too - roles generated algorithmically from the app's red-corner accent - kept inside the site's fight-card newspaper identity (flat, sharp-cornered, hairline grid) rather than forcing in rounded M3 cards; the chart palette itself stays a separate, validated dataviz set.",
+      "Built on real UFC fight data: a normalized Postgres schema, a FastAPI backend serving read-only stats endpoints, and a React dashboard with 20+ interactive charts and widgets - a choropleth of fighter birthplaces, division leaderboards, live UFC.com rankings, and more. The centerpiece is a natural-language-to-SQL chat assistant backed by Claude, where a dedicated read-only Postgres role is the real enforcement layer, not just a prompt.",
     image: "/screenshots/ufc-stats-preview.png",
-    tech: ["PostgreSQL", "FastAPI", "React", "Python", "Claude API", "Material 3"],
+    tech: ["PostgreSQL", "FastAPI", "React", "Python", "Claude API", "Data Pipelines"],
     githubUrl: "https://github.com/LNakai-OSU/ufc-data-insights-web-app",
   },
   {
@@ -56,9 +56,9 @@ export const PROJECTS = [
     name: "Shelf Match",
     tagline: "A book recommender constrained to what a small store actually has in stock.",
     description:
-      "Trained on 75,000 real Goodreads books (11.5M ratings, streamed and filtered from a 2.36M-book/2GB public dataset with a bounded-memory top-K heap) and ranked only against one store's actual inventory - the real problem is best available, not best hypothetical. Real semantic search - sentence embeddings over each book's actual description, not genre keywords - lets a customer type something as abstract as 'stylistically groundbreaking with an intriguing plot' and get a real answer; the same embeddings also power the content-based column of a content/collaborative/hybrid comparison, with a from-scratch collaborative-filtering model (latent-factor matrix factorization, gradient descent, ridge fold-in for new users) trained on the full ratings set. As a store, upload the books you carry and get a code customers can shop against instead of the built-in simulated inventory. Several real bugs found via targeted sanity checks - a count-independent bias-shrinkage flaw, a 15x gradient-accumulation slowdown from np.add.at, and an ISBN-matching bug the new dataset's schema silently surfaced - are documented in the README. The UI runs on a real Material 3 system too - color roles generated algorithmically from the shop's wine-red identity via Google's own HCT algorithm, rather than a hand-picked palette.",
+      "Trained on 75,000 real Goodreads books (11.5M ratings, streamed and filtered from a 2.36M-book/2GB public dataset with a bounded-memory top-K heap) and ranked only against one store's actual inventory - the real problem is best available, not best hypothetical. Real semantic search - sentence embeddings over each book's actual description, not genre keywords - lets a customer type something as abstract as 'stylistically groundbreaking with an intriguing plot' and get a real answer; the same embeddings also power the content-based column of a content/collaborative/hybrid comparison, with a from-scratch collaborative-filtering model (latent-factor matrix factorization, gradient descent, ridge fold-in for new users) trained on the full ratings set. As a store, upload the books you carry and get a code customers can shop against instead of the built-in simulated inventory. Several real bugs found via targeted sanity checks - a count-independent bias-shrinkage flaw, a 15x gradient-accumulation slowdown from np.add.at, and an ISBN-matching bug the new dataset's schema silently surfaced - are documented in the README.",
     image: "/screenshots/shelfmatch-preview.png",
-    tech: ["Python", "PyTorch", "sentence-transformers", "NumPy/SciPy", "FastAPI", "React", "Material 3"],
+    tech: ["Python", "PyTorch", "sentence-transformers", "NumPy/SciPy", "FastAPI", "React"],
     githubUrl: "https://github.com/LNakai-OSU/shelf-match",
   },
   {
