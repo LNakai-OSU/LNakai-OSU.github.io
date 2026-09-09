@@ -309,6 +309,16 @@
   align-self: flex-start;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-actions .btn {
+  align-self: auto;
+}
+
 /* Timeline */
 .timeline {
   list-style: none;

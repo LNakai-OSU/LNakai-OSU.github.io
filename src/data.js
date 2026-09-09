@@ -35,6 +35,16 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
+    name: "Marginalia",
+    tagline: "A novel-writing and idea-tracking workspace, built to catch a spark on the go.",
+    description:
+      "A floating capture button reachable from anywhere in the app takes a spark - a line of dialogue, a character, a what-if - in two taps, tags it, and optionally links it to zero, one, or several stories, so ideas don't have to be filed under a single project the moment they occur. Each story gets its own chapter-by-chapter manuscript editor, a word-goal progress bar, and a focus mode that strips the UI down to just the page. Every write lands in localStorage first and instantly, so the app is genuinely usable with no connection, not just responsive-looking on one; as a Claude Artifact it optionally mirrors that state to a realtime store for cross-device sync and can export a compiled manuscript, and on this static GitHub Pages build it simply detects neither capability and runs on localStorage alone - same code, no separate degraded mode. Built through an explicit creator/critic review loop (three rounds, 5/10 to 9/10) that caught real concurrency and sync bugs, documented in the README. The design system - color, type, spacing, shape, elevation, all token-driven in light and dark - is built around the app's own subject: marginal notes becoming a manuscript, not a generic app palette.",
+    image: "/screenshots/marginalia-preview.png",
+    tech: ["JavaScript", "Claude Artifacts API", "Design Systems"],
+    githubUrl: "https://github.com/LNakai-OSU/marginalia",
+    demoUrl: "https://lnakai-osu.github.io/marginalia/",
+  },
+  {
     name: "UFC Fighter Stats",
     tagline: "A full-stack fighter & fight-statistics dashboard, from schema to chat assistant.",
     description:

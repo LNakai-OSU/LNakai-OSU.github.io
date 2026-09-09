@@ -20,9 +20,21 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <a className="btn btn-primary" href={p.githubUrl} target="_blank" rel="noreferrer">
-              View on GitHub
-            </a>
+            <div className="project-actions">
+              {p.demoUrl && (
+                <a className="btn btn-primary" href={p.demoUrl} target="_blank" rel="noreferrer">
+                  Try it live
+                </a>
+              )}
+              <a
+                className={p.demoUrl ? "btn btn-ghost" : "btn btn-primary"}
+                href={p.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View on GitHub
+              </a>
+            </div>
           </div>
         </article>
       ))}
