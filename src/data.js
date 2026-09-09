@@ -80,6 +80,15 @@ export const PROJECTS = [
     tech: ["FastAPI", "sentence-transformers", "React", "Material 3", "MediaPipe", "three.js"],
     githubUrl: "https://github.com/LNakai-OSU/limber",
   },
+  {
+    name: "Markdown",
+    tagline: "Three reinforcement-learning agents, one pricing problem: sell 40 units in 30 days.",
+    description:
+      "A hands-on RL project built around one real business problem - revenue management, the textbook name for how airlines price seats and retailers price markdowns as a deadline approaches - instead of three disconnected toy demos. A multi-armed bandit (epsilon-greedy, UCB1, Thompson Sampling) finds the best price with no memory of state; tabular Q-learning adds a real deadline and finite inventory, the actual reason a bandit stops being enough; a DQN adds a competitor's drifting price and a market-wide demand shock, two continuous variables that are exactly where a table stops being an option. None of it is just asserted to work: I computed the exact optimal policy independently via dynamic programming, and the trained Q-learning agent reaches ~97% of that optimal revenue, with its learned policy heatmap visibly reproducing the same shape, side by side in the app. Every agent trains offline in PyTorch/NumPy; the trained artifacts - a JSON policy table, an ONNX-exported network, precomputed training curves - ship as static files, and the browser does the rest, including running the DQN's own forward pass live via ONNX Runtime Web. No backend at runtime.",
+    image: "/screenshots/markdown-preview.png",
+    tech: ["Python", "PyTorch", "NumPy", "React", "ONNX Runtime Web", "Material 3"],
+    githubUrl: "https://github.com/LNakai-OSU/markdown",
+  },
 ];
 
 export const EXPERIENCE = [
