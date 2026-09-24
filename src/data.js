@@ -35,6 +35,15 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
+    name: "Foul Play",
+    tagline: "A murder-mystery party generator that doubles as a playable pixel-art detective game.",
+    description:
+      "A React/Express app that generates a complete, internally-consistent murder-mystery party kit - suspects, alibis, motives, evidence, red herrings, a beat-by-beat timeline - from a seeded procedural generator, then lets a host edit every part of it, run the night from a live game-master screen, and print spoiler-safe character sheets where the killer's sheet is structurally identical to everyone else's. A consistency checker (60+ rules) catches logical holes - an unmotivated killer, a red herring that never gets debunked, a clue scheduled to reveal itself before it exists - before a real party ever hits them. The second half turns any generated case into a top-down, pixel-art detective RPG: suspects stand wherever their alibi claims, a suspect's composure is a battle-style HP bar you break with contradicting evidence, and the actual mystery is solvable by reasoning alone - the game hands you claims and headcounts, never the answer key, and a pure solver in the test suite proves a unique solution exists for every generated case before a player ever sees it. Twelve settings (an ocean liner, a polar research station, a jazz club, a movie studio backlot) each get their own hand-built map layout, palette, weather, and a short setting-specific mini-game. Built through an explicit, adversarial creator/critic loop - a separate agent scored the running app after every change and sent it back with concrete repro steps until the score stopped moving - twelve rounds on the game alone, 7.0 to 8.8, each round's real bugs (a stale test-harness assumption, a lighting bug that double-lit one prop, a UI element that could still clip another under a rare three-way combination) documented rather than smoothed over.",
+    image: "/screenshots/foulplay-preview.png",
+    tech: ["React", "TypeScript", "Express", "Procedural Generation", "Canvas / WebAudio", "Design Systems"],
+    githubUrl: "https://github.com/LNakai-OSU/foul-play",
+  },
+  {
     name: "Marginalia",
     tagline: "A novel-writing and idea-tracking workspace, built to catch a spark on the go.",
     description:
