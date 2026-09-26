@@ -98,6 +98,15 @@ export const PROJECTS = [
     tech: ["Python", "PyTorch", "NumPy", "React", "ONNX Runtime Web", "Material 3"],
     githubUrl: "https://github.com/LNakai-OSU/markdown",
   },
+  {
+    name: "EmergentCiv",
+    tagline: "A civilization strategy sim whose economy and diplomacy are built from real theory, not tuned numbers.",
+    description:
+      "Play one faction against an AI, or step back and spectate 2-100 AI civilizations play each other out. The economy runs on a Malthus-Boserup-Smith growth model - a Cobb-Douglas subsistence ceiling escaped by an investment slider that trades military spending now for permanently higher output later, bounded by a physical density cap so territory stays relevant the entire game. Diplomacy combines the security dilemma, social exchange theory, balance-of-threat, and forgiveness with a 'lateral pressure' mechanic - a closing frontier builds tension on its own, eventually forcing war even between two perfectly matched civilizations that would otherwise sit at a permanent peaceful stalemate. Neither model was hand-picked: both came out of an explicit multi-agent review process - independent economist and sociologist passes proposed them from real theory, independent critics re-simulated every worked example from scratch rather than trusting the proposal's own numbers, gated at a 9/10 bar, 3-4 revision rounds each. Two real bugs survived that entire process and only showed up at actual full-game scale, since every reviewed example used small constant numbers: a diplomacy term that silently decayed to zero once armies grew into the thousands, and a utility-scoring imbalance where declaring war never actually led to any fighting because building one more unit always scored higher than attacking. Both are documented and fixed in the commit history, alongside a from-scratch conquest system (sieges, capital sacking, faction elimination and revival) and a turn-history scrubber for stepping back through a running game.",
+    image: "/screenshots/emergentciv-preview.png",
+    tech: ["TypeScript", "React", "Canvas", "Simulation Design", "Multi-Agent Review"],
+    githubUrl: "https://github.com/LNakai-OSU/emergent-civ",
+  },
 ];
 
 export const EXPERIENCE = [
