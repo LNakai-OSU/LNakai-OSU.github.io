@@ -39,16 +39,21 @@ export const PROJECTS = [
     tagline: "A murder-mystery party generator that doubles as a playable pixel-art detective game.",
     description:
       "A React/Express app that generates a complete, internally-consistent murder-mystery party kit - suspects, alibis, motives, evidence, red herrings, a beat-by-beat timeline - from a seeded procedural generator, then lets a host edit every part of it, run the night from a live game-master screen, and print spoiler-safe character sheets where the killer's sheet is structurally identical to everyone else's. A consistency checker (60+ rules) catches logical holes - an unmotivated killer, a red herring that never gets debunked, a clue scheduled to reveal itself before it exists - before a real party ever hits them. The second half turns any generated case into a top-down, pixel-art detective RPG: suspects stand wherever their alibi claims, a suspect's composure is a battle-style HP bar you break with contradicting evidence, and the actual mystery is solvable by reasoning alone - the game hands you claims and headcounts, never the answer key, and a pure solver in the test suite proves a unique solution exists for every generated case before a player ever sees it. Twelve settings (an ocean liner, a polar research station, a jazz club, a movie studio backlot) each get their own hand-built map layout, palette, weather, and a short setting-specific mini-game. Built through an explicit, adversarial creator/critic loop - a separate agent scored the running app after every change and sent it back with concrete repro steps until the score stopped moving - twelve rounds on the game alone, 7.0 to 8.8, each round's real bugs (a stale test-harness assumption, a lighting bug that double-lit one prop, a UI element that could still clip another under a rare three-way combination) documented rather than smoothed over.",
-    image: "/screenshots/foulplay-preview.png",
+    images: [
+      "/screenshots/foulplay-preview.png",
+      "/screenshots/foulplay-preview-2.png",
+      "/screenshots/foulplay-preview-3.png",
+    ],
     tech: ["React", "TypeScript", "Express", "Procedural Generation", "Canvas / WebAudio", "Design Systems"],
     githubUrl: "https://github.com/LNakai-OSU/foul-play",
+    demoUrl: "https://lnakai-osu.github.io/foul-play/",
   },
   {
     name: "Marginalia",
     tagline: "A novel-writing and idea-tracking workspace, built to catch a spark on the go.",
     description:
       "A floating capture button reachable from anywhere in the app takes a spark - a line of dialogue, a character, a what-if - in two taps, tags it, and optionally links it to zero, one, or several stories, so ideas don't have to be filed under a single project the moment they occur. Each story gets its own chapter-by-chapter manuscript editor, a word-goal progress bar, and a focus mode that strips the UI down to just the page. Every write lands in localStorage first and instantly, so the app is genuinely usable with no connection, not just responsive-looking on one; as a Claude Artifact it optionally mirrors that state to a realtime store for cross-device sync and can export a compiled manuscript, and on this static GitHub Pages build it simply detects neither capability and runs on localStorage alone - same code, no separate degraded mode. Built through an explicit creator/critic review loop (three rounds, 5/10 to 9/10) that caught real concurrency and sync bugs, documented in the README. The design system - color, type, spacing, shape, elevation, all token-driven in light and dark - is built around the app's own subject: marginal notes becoming a manuscript, not a generic app palette.",
-    image: "/screenshots/marginalia-preview.png",
+    images: ["/screenshots/marginalia-preview.png"],
     tech: ["JavaScript", "Claude Artifacts API", "Design Systems"],
     githubUrl: "https://github.com/LNakai-OSU/marginalia",
     demoUrl: "https://lnakai-osu.github.io/marginalia/",
@@ -58,7 +63,16 @@ export const PROJECTS = [
     tagline: "A full-stack fighter & fight-statistics dashboard, from schema to chat assistant.",
     description:
       "Built on real UFC fight data: a normalized Postgres schema, a FastAPI backend serving read-only stats endpoints, and a React dashboard with 20+ interactive charts and widgets - a choropleth of fighter birthplaces, division leaderboards, live UFC.com rankings, and more. The centerpiece is a natural-language-to-SQL chat assistant backed by Claude, where a dedicated read-only Postgres role is the real enforcement layer, not just a prompt.",
-    image: "/screenshots/ufc-stats-preview.png",
+    images: [
+      "/screenshots/ufc-stats-preview.png",
+      "/screenshots/ufc-stats-preview-2.png",
+      "/screenshots/ufc-stats-preview-3.png",
+      "/screenshots/ufc-stats-preview-4.png",
+      "/screenshots/ufc-stats-preview-5.png",
+      "/screenshots/ufc-stats-preview-6.png",
+      "/screenshots/ufc-stats-preview-7.png",
+      "/screenshots/ufc-stats-preview-8.png",
+    ],
     tech: ["PostgreSQL", "FastAPI", "React", "Python", "Claude API", "Data Pipelines"],
     githubUrl: "https://github.com/LNakai-OSU/ufc-data-insights-web-app",
   },
@@ -67,7 +81,7 @@ export const PROJECTS = [
     tagline: "An agent-based colony + foraging simulation, rendered as a live 3D colored graph.",
     description:
       "A Mesa agent-based model of an Atta-style leafcutter colony - caste division of labor, fungus-garden agriculture, and ant-colony-optimization-style pheromone trail recruitment - revisiting the ant foraging behavior research I did in undergrad, now as a full simulation. Ships with twelve biologically-grounded variants (garden disease, phorid fly parasitism, seasonal drought, a rival colony contesting shared trees, and more), an A/B comparison mode to test whether a variant actually helps or hurts, and a parameter-sweep tool that heatmaps outcomes across a grid - a small experiment platform, not just a visualization. The control panel runs on Material 3 as a dark instrument-console theme - color roles generated algorithmically from the app's amber accent - while the 3D scene's own caste/health/colony colors stay untouched, since those carry data, not chrome.",
-    image: "/screenshots/antcolony-preview.png",
+    images: ["/screenshots/antcolony-preview.png"],
     tech: ["Python", "Mesa", "FastAPI", "React", "react-three-fiber", "Material 3"],
     githubUrl: "https://github.com/LNakai-OSU/leafcutter-ant-colony-sim",
   },
@@ -76,7 +90,14 @@ export const PROJECTS = [
     tagline: "A book recommender constrained to what a small store actually has in stock.",
     description:
       "Trained on 75,000 real Goodreads books (11.5M ratings, streamed and filtered from a 2.36M-book/2GB public dataset with a bounded-memory top-K heap) and ranked only against one store's actual inventory - the real problem is best available, not best hypothetical. Real semantic search - sentence embeddings over each book's actual description, not genre keywords - lets a customer type something as abstract as 'stylistically groundbreaking with an intriguing plot' and get a real answer; the same embeddings also power the content-based column of a content/collaborative/hybrid comparison, with a from-scratch collaborative-filtering model (latent-factor matrix factorization, gradient descent, ridge fold-in for new users) trained on the full ratings set. As a store, upload the books you carry and get a code customers can shop against instead of the built-in simulated inventory. Several real bugs found via targeted sanity checks - a count-independent bias-shrinkage flaw, a 15x gradient-accumulation slowdown from np.add.at, and an ISBN-matching bug the new dataset's schema silently surfaced - are documented in the README.",
-    image: "/screenshots/shelfmatch-preview.png",
+    images: [
+      "/screenshots/shelfmatch-preview.png",
+      "/screenshots/shelfmatch-preview-2.png",
+      "/screenshots/shelfmatch-preview-3.png",
+      "/screenshots/shelfmatch-preview-4.png",
+      "/screenshots/shelfmatch-preview-5.png",
+      "/screenshots/shelfmatch-preview-6.png",
+    ],
     tech: ["Python", "PyTorch", "sentence-transformers", "NumPy/SciPy", "FastAPI", "React"],
     githubUrl: "https://github.com/LNakai-OSU/shelf-match",
   },
@@ -85,7 +106,15 @@ export const PROJECTS = [
     tagline: "Find a stretch for what hurts - describe it, click a real muscle chart, or screen it from your webcam.",
     description:
       "A wellness app that takes three different kinds of input for the same question - what should I do about this pain or stiffness - and answers from a single hand-curated library of 111 stretches and mobility exercises. A free-text description gets matched by real sentence-embedding similarity, not keywords; a click on the anatomy diagram works because the major muscle groups are actual anatomical illustrations from the open wger.de exercise database layered onto a custom outline, not shapes I drew (wger's own exercise content is gym/strength-training focused, so I kept its art but wrote my own pain-relief-oriented content); and a few seconds of guided movement gets screened for range of motion by MediaPipe pose estimation running entirely in the browser - the video never leaves your device, only a single joint angle does. Every exercise also opens into a real three.js scene: a jointed capsule rig with true forward-kinematics (rotating a shoulder actually carries its elbow and wrist) that you can drag to rotate, not a canned animation. The UI itself runs on a real Material 3 foundation - color roles generated algorithmically from a single seed color via Google's own HCT tonal-spot algorithm, the M3 type scale, and actual M3 components (segmented buttons, outlined text fields, elevated cards) - rather than a one-off palette swap.",
-    image: "/screenshots/limber-preview.png",
+    images: [
+      "/screenshots/limber-preview.png",
+      "/screenshots/limber-preview-2.png",
+      "/screenshots/limber-preview-3.png",
+      "/screenshots/limber-preview-4.png",
+      "/screenshots/limber-preview-5.png",
+      "/screenshots/limber-preview-6.png",
+      "/screenshots/limber-preview-7.png",
+    ],
     tech: ["FastAPI", "sentence-transformers", "React", "Material 3", "MediaPipe", "three.js"],
     githubUrl: "https://github.com/LNakai-OSU/limber",
   },
@@ -94,18 +123,28 @@ export const PROJECTS = [
     tagline: "Three reinforcement-learning agents, one pricing problem: sell 40 units in 30 days.",
     description:
       "A hands-on RL project built around one real business problem - revenue management, the textbook name for how airlines price seats and retailers price markdowns as a deadline approaches - instead of three disconnected toy demos. A multi-armed bandit (epsilon-greedy, UCB1, Thompson Sampling) finds the best price with no memory of state; tabular Q-learning adds a real deadline and finite inventory, the actual reason a bandit stops being enough; a DQN adds a competitor's drifting price and a market-wide demand shock, two continuous variables that are exactly where a table stops being an option. None of it is just asserted to work: I computed the exact optimal policy independently via dynamic programming, and the trained Q-learning agent reaches ~97% of that optimal revenue, with its learned policy heatmap visibly reproducing the same shape, side by side in the app. Every agent trains offline in PyTorch/NumPy; the trained artifacts - a JSON policy table, an ONNX-exported network, precomputed training curves - ship as static files, and the browser does the rest, including running the DQN's own forward pass live via ONNX Runtime Web. No backend at runtime.",
-    image: "/screenshots/markdown-preview.png",
+    images: [
+      "/screenshots/markdown-preview.png",
+      "/screenshots/markdown-preview-2.png",
+      "/screenshots/markdown-preview-3.png",
+      "/screenshots/markdown-preview-4.png",
+    ],
     tech: ["Python", "PyTorch", "NumPy", "React", "ONNX Runtime Web", "Material 3"],
     githubUrl: "https://github.com/LNakai-OSU/markdown",
+    demoUrl: "https://lnakai-osu.github.io/markdown/",
   },
   {
     name: "EmergentCiv",
     tagline: "A civilization strategy sim whose economy and diplomacy are built from real theory, not tuned numbers.",
     description:
       "Play one faction against an AI, or step back and spectate 2-100 AI civilizations play each other out. The economy runs on a Malthus-Boserup-Smith growth model - a Cobb-Douglas subsistence ceiling escaped by an investment slider that trades military spending now for permanently higher output later, bounded by a physical density cap so territory stays relevant the entire game. Diplomacy combines the security dilemma, social exchange theory, balance-of-threat, and forgiveness with a 'lateral pressure' mechanic - a closing frontier builds tension on its own, eventually forcing war even between two perfectly matched civilizations that would otherwise sit at a permanent peaceful stalemate. Neither model was hand-picked: both came out of an explicit multi-agent review process - independent economist and sociologist passes proposed them from real theory, independent critics re-simulated every worked example from scratch rather than trusting the proposal's own numbers, gated at a 9/10 bar, 3-4 revision rounds each. Two real bugs survived that entire process and only showed up at actual full-game scale, since every reviewed example used small constant numbers: a diplomacy term that silently decayed to zero once armies grew into the thousands, and a utility-scoring imbalance where declaring war never actually led to any fighting because building one more unit always scored higher than attacking. Both are documented and fixed in the commit history, alongside a from-scratch conquest system (sieges, capital sacking, faction elimination and revival) and a turn-history scrubber for stepping back through a running game.",
-    image: "/screenshots/emergentciv-preview.png",
+    images: [
+      "/screenshots/emergentciv-preview.png",
+      "/screenshots/emergentciv-preview-2.png",
+    ],
     tech: ["TypeScript", "React", "Canvas", "Simulation Design", "Multi-Agent Review"],
     githubUrl: "https://github.com/LNakai-OSU/emergent-civ",
+    demoUrl: "https://lnakai-osu.github.io/emergent-civ/",
   },
 ];
 
